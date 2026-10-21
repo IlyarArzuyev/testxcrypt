@@ -1,0 +1,10 @@
+macos_instance:
+  image: ghcr.io/cirruslabs/macos-runner:sonoma
+
+task:
+  name: macOS build capacity probe
+  trigger_type: manual
+  probe_script: python3 ci/probe.py
+  always:
+    report_artifacts:
+      path: reports/report.json
