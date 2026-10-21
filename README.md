@@ -5,7 +5,7 @@
 ## Запуск через Codemagic
 
 1. Откройте https://codemagic.io/ и зарегистрируйте личный аккаунт (Individual/Personal, не Team).
-2. Подключите GitHub с доступом только к IlyarArzuyev/testxcrypt и добавьте этот репозиторий как приложение. Если предлагается тип проекта, выберите Other и настройку через YAML.
+2. Подключите GitHub с доступом только к IlyarArzuyev/testxcrypt и добавьте этот репозиторий как приложение. Если предлагается тип проекта, выберите iOS и используйте существующий codemagic.yaml.
 3. Проверьте наличие бесплатных минут для macOS M2. Не включайте billing и платный план: бюджет проекта — ноль.
 4. Нажмите Start new build, выберите ветку main и workflow macos-capacity-probe (XCrypt Mac capacity probe).
 5. После завершения скачайте reports/report.json из артефактов и пришлите его в чат. Если запуск недоступен, пришлите текст ошибки или скриншот.
@@ -28,3 +28,7 @@
 - https://chromium.googlesource.com/chromium/src/+/main/docs/mac_build_instructions.md
 
 Ранее использовавшийся Cirrus CI закрыт с 1 июня 2026: https://cirruslabs.org/ . Конфигурация Cirrus удалена; старые ZIP-пакеты с инструкциями Cirrus больше не актуальны.
+
+## Следующий этап: Chromium
+
+Подготовлен отдельный ручной workflow `chromium-capacity-trial` с лимитом 110 минут. Инструкция и ограничения: [CHROMIUM-TRIAL.md](CHROMIUM-TRIAL.md). Перед запуском проверьте остаток бесплатных минут. Обычный короткий тест остаётся доступен отдельно.
