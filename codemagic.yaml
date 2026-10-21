@@ -1,0 +1,10 @@
+workflows:
+  macos-capacity-probe:
+    name: XCrypt Mac capacity probe
+    instance_type: mac_mini_m2
+    max_build_duration: 10
+    scripts:
+      - name: Check resources and arm64 compiler
+        script: python3 ci/probe.py
+    artifacts:
+      - reports/report.json
